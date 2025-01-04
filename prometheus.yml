@@ -1,0 +1,14 @@
+global:
+  scrape_interval: 10s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['103.138.150.104:9090']
+    basic_auth:
+      username: 'admin'
+      password: 'Prome...@2024'
+
+  - job_name: 'node_exporter'
+    static_configs:
+      - targets: ['103.138.150.104:9100']
