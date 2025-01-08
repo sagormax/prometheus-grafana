@@ -4,11 +4,15 @@ global:
 scrape_configs:
   - job_name: 'prometheus'
     static_configs:
-      - targets: ['IP:9090']
+      - targets: ['prometheus:9090']
     basic_auth:
       username: 'admin'
-      password: 'Prome...@2024'
+      password: 'Prometheus@2024'
 
   - job_name: 'node_exporter'
     static_configs:
-      - targets: ['IP:9100']
+      - targets: ['node_exporter:9100'] # add IP address of the host machine
+  
+  - job_name: 'mysql_exporter' 
+    static_configs:
+      - targets: ['amp_mysql_exporter:9104']
